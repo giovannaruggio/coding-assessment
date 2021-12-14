@@ -17,7 +17,7 @@
 // Arrays in JavaScript can be used to store ___.
     // 1) numbers and strings, 2) other arrays, 3) booleans, 4) all of the above
 // String values must be enclosed within __ when being assigned to variables
-    //1) commas, 2) curly brackets, 3) quotes, 4) parentheses
+    // 1) commas, 2) curly brackets, 3) quotes, 4) parentheses
 // A very useful tool used during development and debugging fro printing content to the debugger is
     // 1) Javascript, 2) terminal/bash, 3) for loops, 4) console.log
 
@@ -68,8 +68,23 @@ var questions = [
         correct: "alerts"
     },
     {
-        question: "what color is grass?",
-        options: ["green", "purple", "blue", "orange"],
-        correct: "green"
+        question: "The condition in an if/else statement is enclosed within ___.",
+        options: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        correct: "parentheses"
     },
+    {
+        question: "Arrays in JavaScript can be used to store ___.",
+        options: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+        correct: "all of the above"
+    },
+    {
+        question: "String values must be enclosed within __ when being assigned to variables.",
+        options: ["commas", "curly brackets", "quotes", "parentheses"],
+        correct: "quotes"
+    },
+    {
+        question: "What is a very useful tool used during development and debugging for printing content to the debugger?",
+        options: ["Javascript", "terminal/bash", "for loops", "console.log"],
+        correct: "Javascript"
+    }, 
 ]
