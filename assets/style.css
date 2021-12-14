@@ -12,7 +12,9 @@ body {
     justify-content: center;
 }
 
-
+.hide {
+    display: none;
+}
 
 
 
