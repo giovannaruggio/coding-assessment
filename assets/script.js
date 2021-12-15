@@ -41,7 +41,6 @@ startButton.addEventListener("click", function(){
 function showQuestions() {
     var question = document.querySelector("#question");
     question.textContent = questions[position].question;
-    var option1 = document.querySelector("#option1");
     option1.textContent = questions[position].options[0];
     var option2 = document.querySelector("#option2");
     option2.textContent = questions[position].options[1];
