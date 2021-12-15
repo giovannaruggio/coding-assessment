@@ -71,12 +71,11 @@ function checkAnswer (event) {
     position ++;
     showQuestions();
     } else {
+        questionAnswer.classList.add("hide");
         scoreBoard.textContent = "Good Job!";
         userInitials = propmt("To Add to HighScore List, Pleas Enter Your Initials.");
         questionAnswer.style.display = "none";
     }
-
-
 
 }
 
