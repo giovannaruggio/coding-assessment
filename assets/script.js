@@ -1,15 +1,5 @@
-//GIVEN I am taking a code quiz
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
-// WHEN I answer a question
-// THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and my score
 
+//Set variables for quiz index 
 var startButton = document.querySelector("#start");
 var questionContainer = document.querySelector(".question-container");
 var optionContainer = document.querySelector(".option-container");
@@ -18,7 +8,7 @@ var questionAnswer = document.querySelector("main");
 var timeElement = document.querySelector(".timer");
 var scoreBoard = document.querySelector("section");
 
-
+//Set variables for questions and answers
 var question = document.querySelector("#question");
 var option1 = document.querySelector("#option1");
 var option2 = document.querySelector("#option2");
@@ -26,6 +16,7 @@ var option3 = document.querySelector("#option3");
 var option4 = document.querySelector("#option4");
 var answer = document.querySelector("#scores");
 
+//Set variables for unknowns
 var position = 0;
 var quizIndex = null;
 var userScore = 0;
@@ -34,6 +25,7 @@ var userInitials = [];
 
 console.log(headerContainer);
 
+//Event listener to start quiz when start button is clicked
 startButton.addEventListener("click", function(){
     console.log("click")
     headerContainer.style.display = "none";
@@ -41,6 +33,7 @@ startButton.addEventListener("click", function(){
     showQuestions();
 })
 
+//Display questions with corresponding options
 function showQuestions() {
     question.textContent = quiz[position].question;
     option1.textContent = quiz[position].options[0];
@@ -53,18 +46,21 @@ function showQuestions() {
     option4.addEventListener("click", checkAnswer);
 }
 
+//Function to check option as correct or inorrect
 function checkAnswer (event) {
     console.log(event.target);
     var answer = event.target.innerText;
+    //Add to score if answer is correct
     if (answer === quiz[position].correct) {
         alert ("Correct Answer!");
         userScore = userScore + 1
+    //Subtract time from timer if answer is incorrect
     } else {
         alert ("Wrong Answer!");
         secondsLeft = secondsLeft - 10;
     }
     userScore++;
-
+//Show next question when previous question is answered
     if (quizIndex < quiz.length) {
     optionContainer.addEventListener("click", showQuestions);
     console.log("click");
@@ -79,6 +75,7 @@ function checkAnswer (event) {
 
 }
 
+//Question/Answer Index for functions above
 var quiz = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -107,6 +104,7 @@ var quiz = [
     } 
 ]
 
+//Function to display remaining time and when time has run out
 function setTimer() {
     var timeInterval = setInterval(function(){
         secondsLeft--;
@@ -119,6 +117,7 @@ function setTimer() {
 }
 setTimer();
 
+//Function to collect user's initials along with the user's score
 function finalScore() {
     let userInitials = document.getElementById("userInitals").value;
     let userScore = JSON.parse(localStorage.getItem("userScore"));
