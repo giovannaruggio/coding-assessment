@@ -27,8 +27,10 @@ var option4 = document.querySelector("#option4");
 var answer = document.querySelector("#scores");
 
 var position = 0;
-var score = 0;
+var quizIndex = null;
+var userScore = 0;
 var secondsLeft = 60;
+var userInitials = [];
 
 console.log(headerContainer);
 
@@ -56,16 +58,25 @@ function checkAnswer (event) {
     var answer = event.target.innerText;
     if (answer === quiz[position].correct) {
         alert ("Correct Answer!");
+        userScore = userScore + 1
     } else {
         alert ("Wrong Answer!");
         secondsLeft = secondsLeft - 10;
     }
-    score++;
+    userScore++;
 
+    if (quizIndex < quiz.length) {
     optionContainer.addEventListener("click", showQuestions);
     console.log("click");
     position ++;
     showQuestions();
+    } else {
+        scoreBoard.textContent = "Good Job!";
+        userInitials = propmt("To Add to HighScore List, Pleas Enter Your Initials.");
+        questionAnswer.style.display = "none";
+    }
+
+
 
 }
 
@@ -109,7 +120,13 @@ function setTimer() {
 }
 setTimer();
 
-if (secondsLeft <0) {
-    questionAnswer.style.display = "none";
-    scoreBoard.classList.remove("hide");
+function finalScore() {
+    let userInitials = document.getElementById("userInitals").value;
+    let userScore = JSON.parse(localStorage.getItem("userScore"));
+        score.push({
+            initials: initials,
+            score: userScore
+        })
+        localStorage.setItem("scores", JSON.stringify(scores));
+        showHighscores(scores);
 }

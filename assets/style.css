@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 body {
@@ -10,15 +10,29 @@ body {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    max-width: 100%;
+    background-color: rgb(162, 196, 242);
+}
+
+main {
+    font-size: 23px;
+}
+
+button {
+    font-size: 17px;
+    padding: 5px;
+    background-color: rgb(105, 115, 254);
+}
+
+.timer {
+    text-align: left;
+    font-size: 14px;
 }
 
 .hide {
     display: none;
 }
 
-.timer {
-    text-align: left;
-}
 
 
 
